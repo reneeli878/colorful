@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#183c36">
+  <title>偶數杯杯・塗鴉遊樂場</title>
+  <meta name="description" content="在杯身畫上自己的圖案，再讓偶數杯杯帶著塗鴉四處彈跳。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23183c36'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-size='26' fill='%23e9ff80'%3E%2B%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div class="brand">LE SEMEUR <span>偶數杯杯</span></div><span class="edition">CUP PLAYGROUND </span><div class="count"><strong id="count"></strong><span>個偶數杯杯</span></div></header>
+  <main>
+    <aside aria-label="杯杯塗鴉工作區">
+      <div class="selected"><span>杯蓋</span><span id="lidColorName" class="chosen-name">落櫻粉</span></div>
+      <div id="lidColors" class="colors" role="group" aria-label="選擇杯蓋顏色"></div>
+      <div class="selected body-label"><span>杯身</span><span id="colorName" class="chosen-name">落櫻粉</span></div>
+      <div id="colors" class="colors" role="group" aria-label="選擇杯身顏色"></div>
+      <div class="preview">
+        <div class="cup-editor">
+          <img id="preview" src="cup.png" alt="落櫻粉杯身、落櫻粉杯蓋偶數杯杯" draggable="false">
+          <img id="lidPreview" class="lid-layer" src="cup.png" alt="" draggable="false">
+          <canvas id="drawing" width="1024" height="1536" aria-label="杯身塗鴉區，可使用手寫筆或滑鼠繪圖"></canvas>
+        </div>
+      </div>
+      <div class="drawing-tools">
+        <div class="brush-row">
+          <label class="ink-label">筆色 <input id="ink" type="color" value="#183c36" aria-label="選擇塗鴉筆色"></label>
+          <div class="sizes" role="group" aria-label="筆刷粗細">
+            <button type="button" data-size="8" aria-pressed="false">細</button>
+            <button type="button" data-size="18" aria-pressed="true">中</button>
+            <button type="button" data-size="32" aria-pressed="false">粗</button>
+          </div>
+          <button id="eraser" type="button" aria-pressed="false">橡皮擦</button>
+        </div>
+        <div class="history-row">
+          <button id="undo" type="button" disabled>復原</button>
+          <button id="redo" type="button" disabled>重做</button>
+          <button id="resetDrawing" type="button" disabled>清除塗鴉</button>
+        </div>
+        <label class="pencil-only"><input id="pencilOnly" type="checkbox" checked> 只用 Apple Pencil</label>
+       
+      </div>
+      
+      
+    </aside>
+    <section class="play">
+      
+      <div id="arena" class="arena"><div id="empty" class="empty"><span class="empty-mark">＋</span><p>第一個偶數杯杯，等你加入</p></div></div>
+      <footer><div><button id="output" class="output" disabled>輸出杯杯 <span>＋</span></button><button id="pause" class="tool" disabled>暫停</button><button id="clear" class="tool" disabled>清空杯杯</button></div></footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

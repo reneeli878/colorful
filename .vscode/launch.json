@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "偶數杯杯：啟動 Chrome 預覽",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:5173/",
+      "webRoot": "${workspaceFolder}/public",
+      "preLaunchTask": "啟動偶數杯杯"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "osucup-playground",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "偶數杯杯 iPad 互動小程式",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node scripts/dev-server.mjs",
+    "check": "node --check public/app.js && node --check scripts/dev-server.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
